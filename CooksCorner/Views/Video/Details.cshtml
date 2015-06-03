@@ -1,0 +1,39 @@
+﻿@model CooksCorner.Models.Video
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="action-content">
+    <h4 class="align-center">Details of this video</h4>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Genre.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Genre.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.VideortUrl)
+    </div>
+    <iframe width="560" height="315" src="@Html.DisplayFor(model => model.VideortUrl)" frameborder="0" allowfullscreen></iframe>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.VideoId }) |
+    @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

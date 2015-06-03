@@ -1,0 +1,88 @@
+﻿/* full page style*/
+html {
+    width: 90%;
+    margin:auto;
+}
+
+/* body section style*/
+body {
+    background-image: url("/Images/bg-image.jpg");
+}
+
+
+td, th {
+    margin-right: 6px;
+    padding: 9px;
+    border:1px solid green;
+}
+.page-footer {
+    max-height: 50px;
+    clear:both;
+    background-color: gray;
+    text-align: center;
+
+}
+
+/* below border for development purpose*/
+.g-border {
+    border: 0px solid green;
+}
+.r-border {
+    border: 2px solid red;
+}
+
+/* style for video */
+
+.recipe {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+ }
+
+/* slider style*/
+
+#sliderFrame {
+    background: none repeat scroll 0 0 #191919;
+    border: 1px solid #066;
+    border-radius: 6px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 720px;
+}
+#sliderFrame, #sliderFrame div {
+    box-sizing: content-box;
+}
+
+/* end of slide style*/
+
+.control-button {
+   
+    position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(29,87,5,1);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 3em;
+    display: block;
+    padding: 4px;
+    height: 150px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(29,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(29,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(29,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin-bottom: 20px ;
+     margin-right: 10px;
+	text-align: center;
+    text-decoration: none;
+    color: rgba(255,255,255,1);
+	
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+

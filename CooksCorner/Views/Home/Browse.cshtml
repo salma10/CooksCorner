@@ -1,0 +1,18 @@
+﻿@model CooksCorner.Models.Genre
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<div class="action-content">
+    <h4 class="align-center">Category: @Model.Name</h4>
+    <h4 class="small">This Category has total @Model.Videos.Count() videos</h4>
+
+    <ul>
+        @foreach (var video in Model.Videos)
+        { 
+            <li><h5>@Html.ActionLink(@video.Title, "Details", new { id=video.VideoId })</h5></li>
+        
+        }
+    </ul>
+</div>

@@ -1,0 +1,29 @@
+﻿@model CooksCorner.Models.Faq
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="action-content"> 
+    <h4 class="align-center">Details about this faq </h4>
+
+
+        <div class="display-label">
+            <p> @Html.DisplayNameFor(model => model.Question)</p>
+        </div>
+        <div class="display-field">
+            <h4 class="small">@Html.DisplayFor(model => model.Question)</h4>
+        </div>
+
+        <div class="display-label">
+             <p>@Html.DisplayNameFor(model => model.Answer)</p>
+        </div>
+        <div class="display-field">
+           <h4 class="small"> @Html.DisplayFor(model => model.Answer)</h4>
+        </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

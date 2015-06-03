@@ -1,0 +1,18 @@
+﻿@model CooksCorner.Models.Video
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="action-content">
+        <h4 class="align-center">Video Recipe Details</h4>
+
+        <p><label>Category Name: </label> @Html.DisplayFor(model => model.Genre.Name) </p>
+        <p><label>Recipe Title: </label>  @Html.DisplayFor(model => model.Title)   </p>   
+        <p> <label>Description: </label></p>
+        <iframe width="560" height="315" src="@Html.DisplayFor(model => model.VideortUrl)" frameborder="0" allowfullscreen></iframe>
+        <p> <label>Description: </label></p>
+        <p>@Html.Raw(Model.Description)</p>
+            
+</div>
+

@@ -1,0 +1,27 @@
+﻿@model CooksCorner.Models.Subscriber
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="action-content">
+    <h4 class="align-center">Subscriber Details</h4>
+
+        <div class="display-label small">
+             @Html.DisplayNameFor(model => model.UserName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UserName)
+        </div>
+
+        <div class="display-label small">
+             @Html.DisplayNameFor(model => model.Email)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

@@ -1,0 +1,25 @@
+﻿@model CooksCorner.Models.WrittenTutorial
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="action-content">    
+  <h4 class="align-center">Details of this Recipe</h4>
+        <p>
+            <label> Category: </label>
+             @Html.DisplayFor(model => model.Genre.Name)
+        </p>
+        <p>
+            <label> Title: </label> 
+            @Html.DisplayFor(model => model.Title)
+        </p>        
+        <p>
+            <label>Description: </label>
+             <p>@Html.Raw(Model.Description)</p>
+        </p>        
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

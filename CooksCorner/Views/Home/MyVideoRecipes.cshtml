@@ -1,0 +1,65 @@
+﻿@model PagedList.IPagedList<CooksCorner.Models.Video>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="action-content">
+    <h4 class="align-center">Your all video recipes</h4>
+
+    <h4 class="btn btn-success">
+        @Html.ActionLink("Create New", "Create", "Video")
+    </h4>
+    <p></p>
+    <table>
+        <tr>
+            <th>
+                Recipe Category
+            </th>
+            <th>
+                Recipe Title
+            </th>
+            <th>
+               Recipe Description
+            </th>
+            <th>
+                Recipe video
+            </th>
+            <th>Action</th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class="truncate-content">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td class="truncate-content">
+                @Html.DisplayFor(modelItem => item.VideortUrl)
+            </td>
+            <td>
+                @Html.ActionLink("Show", "Details", new { id=item.VideoId })
+            </td>
+        </tr>
+    }
+
+    </table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    <div class="test-pagination">
+    @Html.PagedListPager(Model, page => Url.Action("MyVideoRecipes", 
+        new { page }))
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.test-pagination .pagination').removeClass('pagination').addClass('pagination1');
+        
+    });
+</script>

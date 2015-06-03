@@ -1,0 +1,32 @@
+﻿@model CooksCorner.Models.Subscriber
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="action-content">  
+  
+
+    <h4>Are you sure you want to delete this?</h4>
+
+        <div class="display-label small">
+             @Html.DisplayNameFor(model => model.UserName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UserName)
+        </div>
+
+        <div class="display-label small">
+             @Html.DisplayNameFor(model => model.Email)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+   <div class="vertical-space-small"></div>
+    @using (Html.BeginForm()) {
+        <p>
+            <input class="btn btn-danger" type="submit" value="Delete" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+</div>

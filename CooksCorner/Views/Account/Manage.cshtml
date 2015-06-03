@@ -1,0 +1,30 @@
+﻿@model CooksCorner.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+
+<div class="row reset-row-mergin ">
+        <p class="message-success">@ViewBag.StatusMessage</p>
+
+        <p class="align-center">You're logged in as <strong>@User.Identity.Name</strong>.</p>
+
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        { 
+            @Html.Partial("_SetPasswordPartial")
+        }
+        <div class="col-md-1"><hr width="2" size="500" style="color: green;"></div>
+        <div class="col-md-5">
+            <h4> Manage Recipes</h4>
+            <button class="btn btn-success">@Html.ActionLink("Video Recipe","MyVideoRecipes","Home" )</button>
+            <button class="btn btn-success">@Html.ActionLink("Written Recipe","MyWrittenRecipes","Home" )</button>
+        </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

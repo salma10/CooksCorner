@@ -1,0 +1,28 @@
+﻿@model CooksCorner.Models.Genre
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="action-content">    
+ <h2>Details About this Category</h2>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.GenreId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

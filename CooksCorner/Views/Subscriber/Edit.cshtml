@@ -1,0 +1,44 @@
+﻿@model CooksCorner.Models.Subscriber
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="action-content">
+    <h4 class="align-center">Edit Subscriber Information</h4>
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+
+        
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

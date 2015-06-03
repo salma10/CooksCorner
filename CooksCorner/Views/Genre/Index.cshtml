@@ -1,0 +1,58 @@
+﻿@model PagedList.IPagedList<CooksCorner.Models.Genre>
+@using PagedList.Mvc;
+
+
+
+
+@{
+    ViewBag.Title = "All Categories";
+}
+
+<div class="action-content">   
+ <h4 class="align-center">@ViewBag.Title</h4>
+
+    <h4 class="btn btn-success">
+        @Html.ActionLink("Create New", "Create")
+    </h4>
+    <div class="vertical-space-small"></div>
+    <table>
+        <tr>
+            <th>
+               Genre Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>Actions</th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="css-class truncate-content">
+                @Html.DisplayFor(modelItem => item.Description, new { @class="css-class"})
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.GenreId }, new {@class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id=item.GenreId }, new {@class = "btn btn-success" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GenreId }, new {id="css-id", @class="btn btn-danger"})
+            </td>
+        </tr>
+    }
+
+    </table>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    <div class="test-pagination">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.test-pagination .pagination').removeClass('pagination').addClass('pagination1');
+        
+    });
+</script>

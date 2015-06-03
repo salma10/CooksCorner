@@ -1,0 +1,57 @@
+﻿@model PagedList.IPagedList<CooksCorner.Models.WrittenTutorial>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="action-content">
+    <div style="margin:auto">
+    <h4 class="align-center">All Written Recipes</h4>
+    <h4 class="btn btn-success">
+        @Html.ActionLink("Create New", "Create", "WrittenTutorial")
+    </h4>
+    <p></p>
+    <table>
+        <tr>
+            <th>
+                Recipe Category
+            </th>
+            <th>
+                Recipe Title
+            </th>
+            <th>
+               Recipe Description
+            </th>
+            <th>Action</th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                <p>@Html.Raw(item.Genre.Name)</p>
+            </td>
+            <td>
+                <p>@Html.Raw(item.Title)</p>
+            </td>
+            <td class="truncate-content">
+                <p>@Html.Raw(item.Description)</p>
+            </td>
+            <td>
+                @Html.ActionLink("Show", "WrittenDetail", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    <div class="test-pagination">@Html.PagedListPager(Model, page => Url.Action("MyWrittenRecipes", new { page }))</div>
+</div>
+    </div>
+<script>
+    $(document).ready(function () {
+        $('.test-pagination .pagination').removeClass('pagination').addClass('pagination1');
+        
+    });
+</script>
